@@ -1,11 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Equipo Mario Kart - Presentación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <div class="container">
+        <!-- Header con título principal -->
+        <header class="main-header">
+            <div class="flag-icon left-flag">🏁</div>
+            <h1 class="main-title">¡Bienvenidos al Equipo Mario Kart!</h1>
+            <div class="flag-icon right-flag">🏁</div>
+        </header>
+        
+        <!-- Subtítulo -->
+        <p class="subtitle">Conoce a nuestros corredores más locos y veloces 🚀</p>
+        
+        <!-- Grid de tarjetas de corredores -->
+        <div class="racers-grid">
+            <!-- Primera fila -->
+            <div class="racer-card mario-card" data-racer="juan">
+                <div class="card-header">
+                    <div class="character-icon">👨</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="racer-name">Juan "El Rápido"</h3>
+                    <p class="racer-description">Velocidad máxima y precisión en las curvas</p>
+                </div>
+                <button class="view-racer-btn">Ver corredor</button>
+            </div>
+            
+            <div class="racer-card luigi-card" data-racer="pedro">
+                <div class="card-header">
+                    <div class="character-icon">👨‍💼</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="racer-name">Pedro "El Estratega"</h3>
+                    <p class="racer-description">Planificación perfecta y táctica de carrera</p>
+                </div>
+                <button class="view-racer-btn">Ver corredor</button>
+            </div>
+            
+            <div class="racer-card toad-card" data-racer="carlos">
+                <div class="card-header">
+                    <div class="character-icon">🍄</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="racer-name">Carlos "El Loco"</h3>
+                    <p class="racer-description">Maniobras arriesgadas y adrenalina pura</p>
+                </div>
+                <button class="view-racer-btn">Ver corredor</button>
+            </div>
+            
+            <div class="racer-card dk-card" data-racer="luis">
+                <div class="card-header">
+                    <div class="character-icon">🦍</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="racer-name">Luis "El Fuerte"</h3>
+                    <p class="racer-description">Poder bruto y resistencia máxima</p>
+                </div>
+                <button class="view-racer-btn">Ver corredor</button>
+            </div>
+            
+            <!-- Segunda fila centrada -->
+            <div class="racer-card peach-card" data-racer="maria">
+                <div class="card-header">
+                    <div class="character-icon">👸</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="racer-name">María "La Reina"</h3>
+                    <p class="racer-description">Elegancia y gracia en la pista</p>
+                </div>
+                <button class="view-racer-btn">Ver corredora</button>
+            </div>
+        </div>
+        
+        <!-- Patrón de fondo inferior -->
+        <div class="bottom-pattern"></div>
+    </div>
     
+    <!-- Modal para mostrar detalles del corredor -->
+    <div class="modal" id="racerModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-header">
+                    <div class="modal-character-icon"></div>
+                    <h2 class="modal-title"></h2>
+                </div>
+                <div class="modal-info">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-label">Velocidad</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill"></div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Aceleración</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill"></div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Manejo</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill"></div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Peso</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="racer-bio">
+                        <h3>Biografía</h3>
+                        <p class="bio-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
 </body>
 </html>
