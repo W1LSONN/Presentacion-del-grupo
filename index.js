@@ -52,9 +52,9 @@ const racersData = {
     },
     elizabeth: {
 
-        name: 'Elizabeth "Princesa Peach"',
+        name: 'Elizabeth "El Caos"',
         icon: '👸',
-        description: 'Elegancia y gracia en la pista',
+        description: 'Coordinación y gracia en la pista',
         stats: {
             Inteligencia: 80,
             Impulsividad: 95,
