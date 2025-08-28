@@ -15,7 +15,7 @@ const racersData = {
         bio: 'Jhon es el velocista del equipo, y ya Xd. Cada que lo eligen un gatito nace. Es lento, la razón es que no sabe manejar. Conductor sin licencia, nada raro.'
     },
     pedro: {
-        name: 'Pedro "El Estratega"',
+        name: 'Wilson "El Estratega"',
         icon: '👨‍💼',
         description: 'Planificación perfecta y táctica de carrera',
         stats: {
@@ -24,7 +24,7 @@ const racersData = {
             manejo: 90,
             peso: 75
         },
-        bio: 'Pedro es el cerebro del equipo. Su enfoque estratégico le permite analizar cada pista y competidor, adaptando su estilo de conducción según las condiciones. Siempre tiene un plan B y C, lo que lo convierte en un rival impredecible y temido en las carreras.'
+        bio: 'Wilson es el cerebro del equipo. Su enfoque estratégico le permite analizar cada pista y competidor, adaptando su estilo de conducción según las condiciones. Siempre tiene un plan B y C, lo que lo convierte en un rival impredecible y temido en las carreras.'
     },
     fary: {
         name: 'Fary "El Gran Perdedor"',
