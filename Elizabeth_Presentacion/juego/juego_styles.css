@@ -61,3 +61,23 @@ h1 {
   background-color: #e43bb7;
   transform: scale(1.1);
 }
+
+.salir-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn-salir {
+  display: inline-block;
+  padding: 12px 24px;
+  background: rgb(156, 214, 231);
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.btn-salir:hover {
+  background: rgba(161, 205, 216, 0.699);
+}
