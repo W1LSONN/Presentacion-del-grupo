@@ -15,7 +15,7 @@ const racersData = {
         bio: 'Jhon es el velocista del equipo, y ya Xd. Cada que lo eligen un gatito nace. Es lento, la razón es que no sabe manejar. Conductor sin licencia, nada raro.'
     },
     pedro: {
-        name: 'Pedro "El Estratega"',
+        name: 'Wilson "El Estratega"',
         icon: '👨‍💼',
         description: 'Planificación perfecta y táctica de carrera',
         stats: {
@@ -24,7 +24,7 @@ const racersData = {
             manejo: 90,
             peso: 75
         },
-        bio: 'Pedro es el cerebro del equipo. Su enfoque estratégico le permite analizar cada pista y competidor, adaptando su estilo de conducción según las condiciones. Siempre tiene un plan B y C, lo que lo convierte en un rival impredecible y temido en las carreras.'
+        bio: 'Wilson es el cerebro del equipo. Su enfoque estratégico le permite analizar cada pista y competidor, adaptando su estilo de conducción según las condiciones. Siempre tiene un plan B y C, lo que lo convierte en un rival impredecible y temido en las carreras.'
     },
     fary: {
         name: 'Fary "El Gran Perdedor"',
@@ -34,13 +34,13 @@ const racersData = {
             velocidad: 75,
             aceleracion: 60,
             manejo: 90,
-            Suerte: 25
+            suerte: 25
         },
         bio: 'Fary es el apostador del equipo. Sus maniobras arriesgadas le permiten adelantar a sus oponentes en los momentos más inesperados. Su factor suerte y su intuición la mayoría de veces lo lleva a la derrota, pero cuando gana, lo hace a lo grande. Posdata: ¿Sale balatro?'
     },
     matius: {
         name: 'Matius "El Forajido"',
-        icon: '🦍',
+        icon: '⛰️',
         description: 'Poder bruto y resistencia máxima',
         stats: {
             velocidad: 70,
@@ -48,7 +48,7 @@ const racersData = {
             manejo: 80,
             peso: 95
         },
-        bio: 'Matius es la fuerza bruta del equipo. Su peso y potencia le dan una ventaja única en las rectas largas y en las colisiones. Aunque no es el más rápido, su resistencia y determinación lo convierten en un oponente formidable que nunca se rinde, sin importar las circunstancias.'
+        bio: 'Matius es el forajido del equipo, un corredor que vive al margen de las reglas. Su estilo de conducción salvaje y temerario lo convierte en un peligro constante en la pista. No le importa romper las reglas para ganar, y su resistencia legendaria le permite aguantar cualquier castigo que la carrera le imponga. Es el tipo de corredor que siempre termina la carrera, aunque sea arrastrándose sobre la línea de meta.'
     },
     elizabeth: {
 
@@ -129,16 +129,14 @@ function closeModalFunc() {
 document.addEventListener('DOMContentLoaded', function() {
     // Event listener para las tarjetas de corredores
     racerCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const racerId = this.getAttribute('data-racer');
-            
-            // Si es Matius, redirigir a su página
-            if (racerId === 'matius') {
-                window.location.href = 'matias-presentacion/matias-index.html';
-            } else {
-                // Para otros corredores, mostrar el modal
-                showModal(racerId);
+        card.addEventListener('click', function(e) {
+            // Si se hace clic en el botón "VER CORREDOR", no mostrar modal
+            if (e.target.classList.contains('view-racer-btn')) {
+                return;
             }
+            
+            const racerId = this.getAttribute('data-racer');
+            showModal(racerId);
         });
     });
 
