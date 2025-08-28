@@ -38,8 +38,8 @@ const racersData = {
         },
         bio: 'Carlos es el alma salvaje del equipo. Sus maniobras arriesgadas y su estilo de conducción agresivo lo han convertido en el favorito de los fanáticos. Aunque a veces sus movimientos son impredecibles, su valentía y determinación lo han llevado a lograr victorias imposibles.'
     },
-    luis: {
-        name: 'Luis "El Fuerte"',
+    matius: {
+        name: 'Matius "El Forajido"',
         icon: '🦍',
         description: 'Poder bruto y resistencia máxima',
         stats: {
@@ -48,7 +48,7 @@ const racersData = {
             manejo: 80,
             peso: 95
         },
-        bio: 'Luis es la fuerza bruta del equipo. Su peso y potencia le dan una ventaja única en las rectas largas y en las colisiones. Aunque no es el más rápido, su resistencia y determinación lo convierten en un oponente formidable que nunca se rinde, sin importar las circunstancias.'
+        bio: 'Matius es la fuerza bruta del equipo. Su peso y potencia le dan una ventaja única en las rectas largas y en las colisiones. Aunque no es el más rápido, su resistencia y determinación lo convierten en un oponente formidable que nunca se rinde, sin importar las circunstancias.'
     },
     maria: {
         name: 'María "La Reina"',
@@ -130,7 +130,14 @@ document.addEventListener('DOMContentLoaded', function() {
     racerCards.forEach(card => {
         card.addEventListener('click', function() {
             const racerId = this.getAttribute('data-racer');
-            showModal(racerId);
+            
+            // Si es Matius, redirigir a su página
+            if (racerId === 'matius') {
+                window.location.href = 'matias-presentacion/matias-index.html';
+            } else {
+                // Para otros corredores, mostrar el modal
+                showModal(racerId);
+            }
         });
     });
 
