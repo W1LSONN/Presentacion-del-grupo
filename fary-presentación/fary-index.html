@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fariddy Trávez - Presentación Personal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fary-style.css">
+</head>
+<body class="game-blackjack">
+  <div class="container">
+    <!-- Selector de tipo de juego -->
+    <div class="game-selector">
+      <button class="game-btn" data-game="texas">Texas Poker</button>
+      <button class="game-btn active" data-game="blackjack">Blackjack</button>
+      <button class="game-btn" data-game="roulette">Ruleta</button>
+    </div>
+
+    <!-- Header estilo mesa de póker -->
+    <header class="hero-header">
+      <div class="table-oval"></div>
+      <div class="chips chips-left"></div>
+      <div class="chips chips-right"></div>
+
+      <div class="back-button-container">
+        <a href="../index.html" class="back-button">
+          <span class="back-icon">🏠</span>
+          <span class="back-text">Volver al Equipo</span>
+        </a>
+      </div>
+
+      <div class="hero-content">
+        <div class="profile-image">
+          <img src="imagenes/fary.jpg" alt="Fariddy Trávez" class="profile-img">
+        </div>
+        <h1 class="hero-title">Fariddy Trávez</h1>
+        <p class="hero-subtitle">Ludópata & Gamer • Full-Stack en progreso</p>
+        <p class="hero-slogan" id="hero-slogan">Apostando por el mejor algoritmo…</p>
+        <div class="hero-flags">
+          <span class="flag">♠️</span>
+          <span class="flag">♥️</span>
+          <span class="flag">♦️</span>
+          <span class="flag">♣️</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Pasiones -->
+    <section class="features-section">
+      <h2 class="section-title">Características</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🧠</div>
+          <h3>Inteligencia</h3>
+          <p>Curiosidad por aprender, analizar y tratar simplificar problemas complejos, que los resuelva es muy diferente.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Estrategia</h3>
+          <p>Tomo decisiones como en una mesa de póker es decir no pienso las consecuencias. Primero lo hago y luego me arrepiento de mis decisiones</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h3>Creatividad</h3>
+          <p>Diseñar soluciones elegantes y divertir al usuario: el diseño cubre mis errores</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Biografía -->
+    <section class="bio-section">
+      <h2 class="section-title">Biografía</h2>
+      <div class="bio-content">
+        <div class="bio-text">
+          <p>Tengo 22 años y soy un estudiante de la ciudad de Latacunga con muchos intereses como la tecnología y sus avances, los videojuegos y sobre todo tratar de comprender como funcionan las cosas. </p>
+          <p>Desde muy pequeño me ha gustado todo lo que tiene que ver con el desarrollo en software. Claro está que gracias a esto desarrollé una gran pasión por los videojuegos y por descargarlos de forma dudosa en ELAMIGOS (De seguro algún hacker talibán tiene mis datos).</p>
+        <p>Uno de mis mayores logros fue entrar en la carrera y el mayor será poder salir de ella.</p>
+        <p>Creo que el humor y la creatividad son esenciales para superar cualquier obstáculo, y trato de aplicarlos tanto en mis proyectos como en mi vida diaria.</p>
+        </div>
+        <div class="bio-highlights">
+          <div class="highlight-item">
+            <span class="highlight-icon">💻</span>
+            <span class="highlight-text">Interés en la tecnología</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">🤓</span>
+            <span class="highlight-text">Aprendizaje</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">🎮</span>
+            <span class="highlight-text">Gamer</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section class="skills-section">
+      <h2 class="section-title">Habilidades</h2>
+
+      <div class="skills-grid">
+        <!-- Programación -->
+        <div class="skill-category">
+          <h3>👨‍💻 Programación</h3>
+          <ul class="fun-list">
+            <li>🧩 Controlador de ciclos anidados: hago `for` dentro de `for` con confianza… y con miedo de colapsar el universo.</li>
+            <li>⚡ Backend: Desarrollo de APIS y manejo de Node.js</li>
+            <li>🔌 Frontend: Manejo de HTML, CSS, JavaScript.</li>
+          </ul>
+          <div class="skill-bars">
+            <div class="skill-bar">
+              <span class="skill-name">Lógica & Algoritmos</span>
+              <div class="skill-progress"><div class="skill-fill" data-level="60%"></div></div>
+            </div>
+            <div class="skill-bar">
+              <span class="skill-name">Diseño de interfaces</span>
+              <div class="skill-progress"><div class="skill-fill" data-level="50%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gamer -->
+        <div class="skill-category">
+          <h3>🎮 Gamer</h3>
+          <ul class="fun-list">
+            <li>🕹️ Gamer compulsivo: Juego mucho y duermo poco.</li>
+            <li>🎯 Headshot ocasional: no soy malo es que tengo lag.</li>
+            <li>🏆 Jugador ocasional: Si en 40 minutos no me atrae lo dejo.</li>
+          </ul>
+          <div class="skill-bars">
+            <div class="skill-bar">
+              <span class="skill-name">Reflejos FPS</span>
+              <div class="skill-progress"><div class="skill-fill" data-level="76%"></div></div>
+            </div>
+            <div class="skill-bar">
+              <span class="skill-name">Estrategia & Timing</span>
+              <div class="skill-progress"><div class="skill-fill" data-level="90%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blandas -->
+        <div class="skill-category">
+          <h3>🤝 Habilidades blandas</h3>
+          <ul class="fun-list">
+            <li>😎 Adaptabilidad : Me adapto a cualquier situación con o sin estrés.</li>
+            <li>🎤 Comunicación clara para intentar resolver dudas del equipo de trabajo.</li>
+            <li>🧘‍♂️ Paciencia: mantengo la calma frente a desafíos técnicos.</li>
+          </ul>
+          <div class="skill-bars">
+            <div class="skill-bar">
+              <span class="skill-name">Trabajo en equipo</span>
+              <div class="skill-progress"><div class="skill-fill" data-level="70%"></div></div>
+            </div>
+            <div class="skill-bar">
+              <span class="skill-name">Gestión del tiempo</span>
+              <div class="skill-progress"><div class="skill-fill" data-level="81%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proyecto / Mini demo casino -->
+    <section class="project-section">
+      <div class="project-content">
+        <h2 class="section-title">Proyecto Estrella</h2>
+        <div class="project-card">
+          <div class="project-info">
+            <h3>Blackjack Casino</h3>
+            <p>Juego completo de Blackjack contra la máquina con sistema de fichas.</p>
+            
+            <div class="game-controls">
+              <div class="game-info">
+                <div class="chips-display">Fichas: <span id="chips-count">100</span></div>
+                <div class="bet-display">Apuesta: <span id="bet-amount">0</span></div>
+              </div>
+              
+              <div class="chip-selection">
+                <button class="chip-btn" data-value="5">5</button>
+                <button class="chip-btn" data-value="10">10</button>
+                <button class="chip-btn" data-value="25">25</button>
+                <button class="chip-btn" data-value="50">50</button>
+                <div class="custom-chip">
+                  <input type="number" id="custom-chip" placeholder="Otro" min="1">
+                  <button class="chip-btn" id="custom-chip-btn">Añadir</button>
+                </div>
+              </div>
+              
+              <div class="action-buttons">
+                <button class="project-button deal" id="deal-button">Repartir (Espacio)</button>
+                <button class="project-button hit" id="hit-button" disabled>Pedir (H)</button>
+                <button class="project-button stand" id="stand-button" disabled>Plantarse (P)</button>
+                <button class="project-button restart" id="restart-button">Reiniciar Juego</button>
+              </div>
+            </div>
+            
+            <div class="game-area">
+              <div class="hand">
+                <div class="hand-title">Casa</div>
+                <div id="dealer-cards" class="cards-container"></div>
+                <div id="dealer-score" class="score-display" style="margin-top: 5px; font-weight: bold; color: var(--blackjack-gold);"></div>
+              </div>
+              
+              <div class="result-message" id="result-message"></div>
+              
+              <div class="hand">
+                <div class="hand-title">Jugador</div>
+                <div id="player-cards" class="cards-container"></div>
+                <div id="player-score" class="score-display" style="margin-top: 5px; font-weight: bold; color: var(--blackjack-gold);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 Fariddy Trávez — Inspirado en el Casino</p>
+        <div class="footer-icons">
+          <span>♠️</span><span>♥️</span><span>♦️</span><span>♣️</span>
+        </div>
+      </div>
+      <div class="bottom-pattern"></div>
+    </footer>
+  </div>
+
+  <script src="fary.js"></script>
+</body>
+</html>
