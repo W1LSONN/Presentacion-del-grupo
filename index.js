@@ -26,17 +26,17 @@ const racersData = {
         },
         bio: 'Pedro es el cerebro del equipo. Su enfoque estratégico le permite analizar cada pista y competidor, adaptando su estilo de conducción según las condiciones. Siempre tiene un plan B y C, lo que lo convierte en un rival impredecible y temido en las carreras.'
     },
-    carlos: {
-        name: 'Carlos "El Loco"',
-        icon: '🍄',
+    fary: {
+        name: 'Fary "El Gran Perdedor"',
+        icon: '🃏',
         description: 'Maniobras arriesgadas y adrenalina pura',
         stats: {
-            velocidad: 85,
-            aceleracion: 95,
-            manejo: 75,
-            peso: 65
+            velocidad: 75,
+            aceleracion: 60,
+            manejo: 90,
+            Suerte: 25
         },
-        bio: 'Carlos es el alma salvaje del equipo. Sus maniobras arriesgadas y su estilo de conducción agresivo lo han convertido en el favorito de los fanáticos. Aunque a veces sus movimientos son impredecibles, su valentía y determinación lo han llevado a lograr victorias imposibles.'
+        bio: 'Fary es el apostador del equipo. Sus maniobras arriesgadas le permiten adelantar a sus oponentes en los momentos más inesperados. Su factor suerte y su intuición la mayoría de veces lo lleva a la derrota, pero cuando gana, lo hace a lo grande. Posdata: ¿Sale balatro?'
     },
     matius: {
         name: 'Matius "El Forajido"',

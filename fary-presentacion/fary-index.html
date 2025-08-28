@@ -161,60 +161,71 @@
       </div>
     </section>
 
-    <!-- Proyecto / Mini demo casino -->
-    <section class="project-section">
-      <div class="project-content">
-        <h2 class="section-title">Proyecto Estrella</h2>
-        <div class="project-card">
-          <div class="project-info">
-            <h3>Blackjack Casino</h3>
-            <p>Juego completo de Blackjack contra la máquina con sistema de fichas.</p>
-            
-            <div class="game-controls">
-              <div class="game-info">
-                <div class="chips-display">Fichas: <span id="chips-count">100</span></div>
-                <div class="bet-display">Apuesta: <span id="bet-amount">0</span></div>
-              </div>
-              
-              <div class="chip-selection">
-                <button class="chip-btn" data-value="5">5</button>
-                <button class="chip-btn" data-value="10">10</button>
-                <button class="chip-btn" data-value="25">25</button>
-                <button class="chip-btn" data-value="50">50</button>
-                <div class="custom-chip">
-                  <input type="number" id="custom-chip" placeholder="Otro" min="1">
-                  <button class="chip-btn" id="custom-chip-btn">Añadir</button>
-                </div>
-              </div>
-              
-              <div class="action-buttons">
-                <button class="project-button deal" id="deal-button">Repartir (Espacio)</button>
-                <button class="project-button hit" id="hit-button" disabled>Pedir (H)</button>
-                <button class="project-button stand" id="stand-button" disabled>Plantarse (P)</button>
-                <button class="project-button restart" id="restart-button">Reiniciar Juego</button>
-              </div>
-            </div>
-            
-            <div class="game-area">
-              <div class="hand">
-                <div class="hand-title">Casa</div>
-                <div id="dealer-cards" class="cards-container"></div>
-                <div id="dealer-score" class="score-display" style="margin-top: 5px; font-weight: bold; color: var(--blackjack-gold);"></div>
-              </div>
-              
-              <div class="result-message" id="result-message"></div>
-              
-              <div class="hand">
-                <div class="hand-title">Jugador</div>
-                <div id="player-cards" class="cards-container"></div>
-                <div id="player-score" class="score-display" style="margin-top: 5px; font-weight: bold; color: var(--blackjack-gold);"></div>
-              </div>
-            </div>
-          </div>
+<!-- Proyecto / Mini demo casino -->
+<section class="project-section">
+  <div class="project-content">
+    <h2 class="section-title">Proyecto Estrella</h2>
+    <div class="project-card">
+      <div class="project-info">
+        <h3>Blackjack Casino</h3>
+        <p>Juego completo de Blackjack contra la máquina con sistema de fichas.</p>
+        
+        <!-- Botón para abrir modal -->
+        <button class="open-modal-btn" id="open-blackjack">Abrir Blackjack</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal del Blackjack -->
+<div id="blackjack-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal" id="close-blackjack">&times;</span>
+    
+    <h3 class="modal-title">Blackjack Casino</h3>
+    <div class="game-controls">
+      <div class="game-info">
+        <div class="chips-display">Fichas: <span id="chips-count">100</span></div>
+        <div class="bet-display">Apuesta: <span id="bet-amount">0</span></div>
+      </div>
+      
+      <div class="chip-selection">
+        <button class="chip-btn" data-value="5">5</button>
+        <button class="chip-btn" data-value="10">10</button>
+        <button class="chip-btn" data-value="25">25</button>
+        <button class="chip-btn" data-value="50">50</button>
+        <div class="custom-chip">
+          <input type="number" id="custom-chip" placeholder="Otro" min="1">
+          <button class="chip-btn" id="custom-chip-btn">Añadir</button>
         </div>
       </div>
-    </section>
-
+      
+      <div class="action-buttons">
+        <button class="project-button deal" id="deal-button">Repartir (Espacio)</button>
+        <button class="project-button hit" id="hit-button" disabled>Pedir (H)</button>
+        <button class="project-button stand" id="stand-button" disabled>Plantarse (P)</button>
+        <button class="project-button restart" id="restart-button">Reiniciar Juego</button>
+      </div>
+    </div>
+    
+    <div class="game-area">
+      <div class="hand">
+        <div class="hand-title">Casa</div>
+        <div id="dealer-cards" class="cards-container"></div>
+        <div id="dealer-score" class="score-display"></div>
+      </div>
+      
+      <div class="result-message" id="result-message"></div>
+      
+      <div class="hand">
+        <div class="hand-title">Jugador</div>
+        <div id="player-cards" class="cards-container"></div>
+        <div id="player-score" class="score-display"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-content">

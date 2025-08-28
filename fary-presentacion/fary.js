@@ -104,7 +104,11 @@ function createCardElement(card, isFaceDown = false) {
     cardEl.classList.add("back");
     cardEl.innerHTML = "";
   } else {
-    cardEl.textContent = `${card.value} ${card.suit}`;
+    // Formato más estilizado para las cartas
+    cardEl.innerHTML = `
+      <div class="card-value">${card.value}</div>
+      <div class="card-suit">${card.suit}</div>
+    `;
   }
   
   cardEl.dataset.value = getCardValue(card);
@@ -184,10 +188,16 @@ function startGame() {
   
   // Mostrar cartas del jugador
   playerCardsEl.innerHTML = '';
-  playerHand.forEach(card => {
+  playerHand.forEach((card, index) => {
     const cardEl = createCardElement(card);
     playerCardsEl.appendChild(cardEl);
-    setTimeout(() => cardEl.classList.add("flip"), 100);
+    setTimeout(() => {
+      cardEl.classList.add("flip");
+      if (index === playerHand.length - 1) {
+        const playerScore = calculateHand(playerHand);
+        playerScoreEl.textContent = `Puntuación: ${playerScore}`;
+      }
+    }, 100 * index);
   });
   
   // Mostrar cartas de la casa (una boca abajo)
@@ -199,16 +209,18 @@ function startGame() {
   const dealerSecondCard = createCardElement(dealerHand[1], true);
   dealerCardsEl.appendChild(dealerSecondCard);
   
-  // Actualizar puntuaciones
-  const playerScore = calculateHand(playerHand);
-  playerScoreEl.textContent = `Puntuación: ${playerScore}`;
-  
   // Verificar blackjack
+  const playerScore = calculateHand(playerHand);
+  const dealerScore = calculateHand(dealerHand);
+  
   if (playerScore === 21) {
     // Revelar carta de la casa
     setTimeout(() => {
       dealerSecondCard.classList.remove("back");
-      dealerSecondCard.textContent = `${dealerHand[1].value} ${dealerHand[1].suit}`;
+      dealerSecondCard.innerHTML = `
+        <div class="card-value">${dealerHand[1].value}</div>
+        <div class="card-suit">${dealerHand[1].suit}</div>
+      `;
       dealerSecondCard.dataset.value = getCardValue(dealerHand[1]);
       
       const dealerScore = calculateHand(dealerHand);
@@ -218,12 +230,13 @@ function startGame() {
         // Push - ambos tienen blackjack
         chips += currentBet; // Devolver apuesta
         updateChipsDisplay();
-        showResultMessage("¡Push! Ambos tienen Blackjack", "push");
+        showResultMessage("¡EMPATE! Ambos tienen Blackjack", "push");
       } else {
         // Jugador gana con blackjack
-        chips += currentBet * 2.5; // 3:2 por blackjack
+        const winAmount = Math.floor(currentBet * 2.5);
+        chips += winAmount;
         updateChipsDisplay();
-        showResultMessage("¡BLACKJACK! Ganaste 2.5x tu apuesta", "win");
+        showResultMessage(`¡BLACKJACK! Ganaste ${winAmount} fichas`, "win");
       }
       
       resetRound();
@@ -246,21 +259,24 @@ function hit() {
   
   const cardEl = createCardElement(newCard);
   playerCardsEl.appendChild(cardEl);
-  cardEl.classList.add("flip");
   
-  const playerScore = calculateHand(playerHand);
-  playerScoreEl.textContent = `Puntuación: ${playerScore}`;
-  
-  // Verificar si el jugador llegó a 21 o se pasó
-  if (playerScore === 21) {
-    showResultMessage("¡Exactamente 21! Ganaste", "win");
-    chips += currentBet * 2; // Ganar apuesta
-    updateChipsDisplay();
-    resetRound();
-  } else if (playerScore > 21) {
-    showResultMessage("¡Te pasaste! Pierdes tu apuesta", "lose");
-    resetRound();
-  }
+  // Animación secuencial
+  setTimeout(() => {
+    cardEl.classList.add("flip");
+    const playerScore = calculateHand(playerHand);
+    playerScoreEl.textContent = `Puntuación: ${playerScore}`;
+    
+    // Verificar si el jugador llegó a 21 o se pasó
+    if (playerScore === 21) {
+      showResultMessage("¡Exactamente 21! Ganaste", "win");
+      chips += currentBet * 2; // Ganar apuesta
+      updateChipsDisplay();
+      setTimeout(resetRound, 1500);
+    } else if (playerScore > 21) {
+      showResultMessage("¡Te pasaste! Pierdes tu apuesta", "lose");
+      setTimeout(resetRound, 1500);
+    }
+  }, 100);
 }
 
 // Turno del jugador - Plantarse
@@ -274,7 +290,10 @@ function stand() {
   // Revelar carta de la casa
   const dealerCards = dealerCardsEl.querySelectorAll('.card');
   dealerCards[1].classList.remove("back");
-  dealerCards[1].textContent = `${dealerHand[1].value} ${dealerHand[1].suit}`;
+  dealerCards[1].innerHTML = `
+    <div class="card-value">${dealerHand[1].value}</div>
+    <div class="card-suit">${dealerHand[1].suit}</div>
+  `;
   dealerCards[1].dataset.value = getCardValue(dealerHand[1]);
   
   let dealerScore = calculateHand(dealerHand);
@@ -289,12 +308,14 @@ function stand() {
         
         const cardEl = createCardElement(newCard);
         dealerCardsEl.appendChild(cardEl);
-        cardEl.classList.add("flip");
         
-        dealerScore = calculateHand(dealerHand);
-        dealerScoreEl.textContent = `Puntuación: ${dealerScore}`;
-        
-        playDealer();
+        setTimeout(() => {
+          cardEl.classList.add("flip");
+          dealerScore = calculateHand(dealerHand);
+          dealerScoreEl.textContent = `Puntuación: ${dealerScore}`;
+          
+          playDealer();
+        }, 300);
       }, 800);
     } else {
       // Determinar ganador
@@ -307,16 +328,16 @@ function stand() {
       } else if (playerScore > dealerScore) {
         chips += currentBet * 2; // Ganar apuesta
         updateChipsDisplay();
-        showResultMessage("¡Ganaste!", "win");
+        showResultMessage(`¡Ganaste! ${playerScore} vs ${dealerScore}`, "win");
       } else if (playerScore < dealerScore) {
-        showResultMessage("La casa gana", "lose");
+        showResultMessage(`La casa gana ${dealerScore} vs ${playerScore}`, "lose");
       } else {
         chips += currentBet; // Push - devolver apuesta
         updateChipsDisplay();
-        showResultMessage("¡Empate!", "push");
+        showResultMessage("¡EMPATE!", "push");
       }
       
-      resetRound();
+      setTimeout(resetRound, 2500);
     }
   };
   
@@ -440,3 +461,24 @@ window.addEventListener("DOMContentLoaded", () => {
   const firstBar = $(".skill-fill");
   if (firstBar) barsObserver.observe(firstBar);
 });     
+// --- Modal Blackjack ---
+const blackjackModal = $("#blackjack-modal");
+const openBlackjackBtn = $("#open-blackjack");
+const closeBlackjackBtn = $("#close-blackjack");
+
+openBlackjackBtn?.addEventListener("click", () => {
+  blackjackModal.style.display = "flex";
+});
+
+closeBlackjackBtn?.addEventListener("click", () => {
+  blackjackModal.style.display = "none";
+  resetRound(); // reset al cerrar
+});
+
+// Cerrar modal al hacer clic fuera del contenido
+window.addEventListener("click", (e) => {
+  if (e.target === blackjackModal) {
+    blackjackModal.style.display = "none";
+    resetRound();
+  }
+});
