@@ -69,10 +69,10 @@ body {
 .profile-img {
     width: 200px;
     height: 200px;
-    border-radius: 50%;
+    border-radius: 15px;
     border: 5px solid var(--accent-yellow);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    object-fit: cover;
+    object-fit: top;
     transition: all 0.3s ease;
 }
 
@@ -287,6 +287,82 @@ section:nth-child(even) {
     width: 0;
 }
 
+/* Sección del proyecto */
+.project-section {
+    background: var(--text-white);
+    padding: 80px 20px;
+}
+
+.project-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.project-card {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    border-radius: 25px;
+    padding: 50px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+    margin-top: 30px;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--hover-shadow);
+}
+
+.project-info h3 {
+    color: var(--accent-yellow);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.project-info p {
+    color: var(--text-white);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.project-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: linear-gradient(45deg, var(--accent-orange), var(--accent-yellow));
+    color: var(--text-white);
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, var(--accent-yellow), var(--accent-orange));
+}
+
+.button-icon {
+    font-size: 1.2rem;
+    animation: buttonPulse 2s ease-in-out infinite;
+}
+
+@keyframes buttonPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
 /* Footer */
 .footer {
     background: var(--primary-blue);
@@ -439,6 +515,14 @@ section:nth-child(even) {
     .features-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 20px;
+    }
+    
+    .project-card {
+        padding: 30px 20px;
+    }
+    
+    .project-info h3 {
+        font-size: 1.5rem;
     }
     
     section {
