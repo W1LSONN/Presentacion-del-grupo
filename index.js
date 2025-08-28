@@ -3,16 +3,16 @@
 // Datos de los corredores del equipo Mario Kart
 const racersData = {
     juan: {
-        name: 'Juan "El Rápido"',
-        icon: '👨',
+        name: 'Jhon "El tralalero"',
+        icon: '🦈',
         description: 'Velocidad máxima y precisión en las curvas',
         stats: {
-            velocidad: 95,
-            aceleracion: 90,
-            manejo: 85,
-            peso: 70
+            velocidad: 55,
+            aceleracion: 30,
+            manejo: 74,
+            peso: 55
         },
-        bio: 'Juan es nuestro corredor estrella, conocido por su velocidad excepcional y su capacidad para mantener la línea perfecta en las curvas más difíciles. Su experiencia en carreras de karting desde la infancia lo ha convertido en un piloto impecable que siempre encuentra la ruta más rápida hacia la victoria.'
+        bio: 'Jhon es el velocista del equipo, y ya Xd. Cada que lo eligen un gatito nace. Es lento, la razón es que no sabe manejar. Conductor sin licencia, nada raro.'
     },
     pedro: {
         name: 'Pedro "El Estratega"',
@@ -51,7 +51,8 @@ const racersData = {
         bio: 'Matius es la fuerza bruta del equipo. Su peso y potencia le dan una ventaja única en las rectas largas y en las colisiones. Aunque no es el más rápido, su resistencia y determinación lo convierten en un oponente formidable que nunca se rinde, sin importar las circunstancias.'
     },
     elizabeth: {
-        name: 'Elizabeth "Princesa del Caos"',
+
+        name: 'Elizabeth "Princesa Peach"',
         icon: '👸',
         description: 'Elegancia y gracia en la pista',
         stats: {
