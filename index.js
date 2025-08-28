@@ -51,7 +51,7 @@ const racersData = {
         bio: 'Matius es la fuerza bruta del equipo. Su peso y potencia le dan una ventaja única en las rectas largas y en las colisiones. Aunque no es el más rápido, su resistencia y determinación lo convierten en un oponente formidable que nunca se rinde, sin importar las circunstancias.'
     },
     elizabeth: {
-        name: 'Elizabeth "Princesa Peach"',
+        name: 'Elizabeth "Princesa del Caos"',
         icon: '👸',
         description: 'Elegancia y gracia en la pista',
         stats: {

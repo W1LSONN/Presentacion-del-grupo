@@ -333,7 +333,11 @@ section::after {
 .skill-bars {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 15px;
+}
+
+.skill-bar {
+  width: 100%;
 }
 
 .skill-progress {
@@ -347,6 +351,13 @@ section::after {
     border: 2px solid var(--light-pink);
 }
 
+.stat-fill {
+  height: 100%;
+  width: 0; /* arranca en 0, el JS global lo llena */
+  background: linear-gradient(90deg, #ff99cc, #ff6699);
+  border-radius: 10px;
+  transition: width 1s ease-in-out;
+}
 /* Footer - Reino de la Princesa */
 .footer {
     background: linear-gradient(135deg, var(--castle-purple), var(--royal-pink));
