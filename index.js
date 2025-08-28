@@ -50,17 +50,17 @@ const racersData = {
         },
         bio: 'Luis es la fuerza bruta del equipo. Su peso y potencia le dan una ventaja única en las rectas largas y en las colisiones. Aunque no es el más rápido, su resistencia y determinación lo convierten en un oponente formidable que nunca se rinde, sin importar las circunstancias.'
     },
-    maria: {
-        name: 'María "La Reina"',
+    elizabeth: {
+        name: 'Elizabeth "Princesa Peach"',
         icon: '👸',
         description: 'Elegancia y gracia en la pista',
         stats: {
-            velocidad: 90,
-            aceleracion: 85,
-            manejo: 95,
-            peso: 60
+            Inteligencia: 80,
+            Impulsividad: 95,
+            "Manejo de Estrés": 15,
+            Imperactividad: 80
         },
-        bio: 'María es la reina de la pista, combinando velocidad con una gracia excepcional. Su manejo perfecto del kart y su capacidad para mantener la calma bajo presión la han convertido en una de las corredoras más respetadas. Su estilo elegante y preciso es la envidia de todos los competidores.'
+        bio: 'Combina el estilo elegante con la lógica y creatividad de la ingeniería, siempre buscando soluciones rápidas (a veces demasiado rápidas). Su mayor poder: transformar los problemas en oportunidades, aunque el estrés no siempre sea su mejor aliado.'
     }
 };
 
